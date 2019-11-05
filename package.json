@@ -1,0 +1,17 @@
+{
+  "name": "runeterra-stuff",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "repository": "https://github.com/gabrielcarneiro97/legends-of-runeterra.git",
+  "author": "gabriel.carneiro.castro@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "eslint": "^6.6.0"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.5"
+  }
+}
