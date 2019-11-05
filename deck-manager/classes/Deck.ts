@@ -51,9 +51,18 @@ class Deck {
 
     const byRegionCards = regionCodes.map((regionCode) => this.cards.filter((card) => card.region.id().asInt === regionCode));
 
+
     ordered[3] = {};
     ordered[2] = {};
     ordered[1] = {};
+
+    byRegionCards.forEach((cards, i) => {
+      const region = regionCodes[i];
+      cards.forEach((card) => {
+        const cardQnt = this.cardsCounter[card.cardCode];
+        ordered[cardQnt][region] = ordered[cardQnt][region] ? ordered[cardQnt][region].add(card.cardCode) : new Set<string>().add(card.cardCode);
+      });
+    });
 
     return ordered;
   }
