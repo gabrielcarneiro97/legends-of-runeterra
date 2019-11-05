@@ -57,10 +57,11 @@ class Deck {
     ordered[1] = {};
 
     byRegionCards.forEach((cards, i) => {
-      const region = regionCodes[i];
+      const regionId = regionCodes[i].toString().padStart(2, '0');
       cards.forEach((card) => {
         const cardQnt = this.cardsCounter[card.cardCode];
-        ordered[cardQnt][region] = ordered[cardQnt][region] ? ordered[cardQnt][region].add(card.cardCode) : new Set<string>().add(card.cardCode);
+        const setRegion = `${card.setCode}${regionId}`;
+        ordered[cardQnt][setRegion] = ordered[cardQnt][setRegion] ? ordered[cardQnt][setRegion].add(card.cardCode) : new Set<string>().add(card.cardCode);
       });
     });
 
